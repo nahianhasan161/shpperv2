@@ -9,6 +9,7 @@ import { useLocale } from "next-intl";
 import PolicyContent from "@/components/paragraph/policyContent";
 import OurServiceSection from "./sections/ourServiceSection";
 import { termsContentArabic } from "@/content/termsContentArabic";
+import ContactUsSection from "./sections/contactUsSection";
 
 export const runtime = "edge";
 
