@@ -1,6 +1,6 @@
 export const termsContent = {
   en: {
-    title: "Updated at 27/10/2024",
+    title: "Terms & Conditions",
 
     aboutusInfo: {
       title: "About Us",

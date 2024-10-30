@@ -22,7 +22,9 @@ export default function ContentTable(props: IContentTableProps) {
             {props.titles.map((title, index) => (
               <th
                 key={index}
-                className={`border-2 border-gray-400 p-4 text-left font-bold`}
+                className={`${
+                  isReversed ? "text-right" : ""
+                } border-2 border-gray-400 p-4 text-left font-bold`}
               >
                 {title}
               </th>

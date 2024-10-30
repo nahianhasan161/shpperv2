@@ -4,8 +4,11 @@ import * as React from "react";
 import BackArrowIcon from "@/icons/buttons/backarrow.svg";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import { cn } from "@/helpers/utills";
 export interface ISecondaryNavbarProps {
   title: string;
+  noButton?: Boolean;
+  className?: string;
 }
 
 export default function SecondaryNavbar(props: ISecondaryNavbarProps) {
@@ -27,7 +30,7 @@ export default function SecondaryNavbar(props: ISecondaryNavbarProps) {
     });
   };
   return (
-    <nav className="max-w-[1350px] mx-auto w-full">
+    <nav className="max-w-[1350px] mx-auto w-full md:px-12 sm:px-5 ">
       <div className="flex  items-center justify-between text-black pb-5 pt-10">
         <Link
           href={"/"}
@@ -36,30 +39,41 @@ export default function SecondaryNavbar(props: ISecondaryNavbarProps) {
           <BackArrowIcon className="w-5 h-5" />
           <span>Back</span>
         </Link>
-        <h1 className="text-xl sm:text-[36px] whitespace-nowrap  lg:text-[44px] text-center font-semibold justify-self-center  ">
+        <h1
+          className={cn(
+            "text-xl sm:text-[36px] sm:whitespace-nowrap  lg:text-[44px] text-center font-semibold justify-self-center  ",
+            props.className
+          )}
+        >
           {/* sm:pr-[6rem] */}
           {props.title}
         </h1>
 
         <div className="flex items-center text-xs md:text-base">
-          <div
-            className={`flex justify-center items-center py-1 sm:py-2 sm:pr-5 pr-3 pl-5 sm:pl-7  rounded-l-full transition-all duration-300 ease-in cursor-pointer ${
-              localActive == "en" ? "bg-[#1F3043] text-white" : "bg-white"
-            }`}
-            onClick={() => changeLanguge("en")}
-          >
-            EN
-          </div>
-          <div
-            className={`py-3 sm:py-4 md:py-5 pl-2 sm:pl-3 pr-7 sm:pr-10 relative  rounded-r-full transition-all duration-300 ease-in cursor-pointer
+          {!props.noButton ? (
+            <>
+              <div
+                className={`flex justify-center items-center py-1 sm:py-2 sm:pr-5 pr-3 pl-5 sm:pl-7  rounded-l-full transition-all duration-300 ease-in cursor-pointer ${
+                  localActive == "en" ? "bg-[#1F3043] text-white" : "bg-white"
+                }`}
+                onClick={() => changeLanguge("en")}
+              >
+                EN
+              </div>
+              <div
+                className={`py-3 sm:py-4 md:py-5 pl-2 sm:pl-3 pr-7 sm:pr-10 relative  rounded-r-full transition-all duration-300 ease-in cursor-pointer
           
           ${localActive == "ar" ? "bg-[#1F3043] text-white" : "bg-white"}`}
-            onClick={() => changeLanguge("ar")}
-          >
-            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              عربي
-            </span>
-          </div>
+                onClick={() => changeLanguge("ar")}
+              >
+                <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                  عربي
+                </span>
+              </div>
+            </>
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     </nav>
