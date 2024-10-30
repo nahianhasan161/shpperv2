@@ -1,10 +1,6 @@
 import PrimaryFooter from "@/components/footer/primaryFooter";
 import GeneralTermsSection from "./sections/generalTermsSection";
 
-import DeliveryPolicySection from "./sections/deliveryPolicySection";
-import ContactUsSection from "./sections/contactUsSection";
-import CancelationPolicySection from "./sections/cancelationPolicySection";
-import RefundPolicySection from "./sections/refundPolicySection";
 import { termsContent } from "@/content/termsContent";
 import SecondaryNavbar from "@/components/Navbar/secondaryNavbar";
 import ContactSection from "@/app/sections/contactSection";
