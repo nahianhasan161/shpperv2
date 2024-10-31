@@ -1,4 +1,4 @@
-export const instagramLink = "https://www.instagram.com/shppernet/";
+export const instagramLink = "https://www.instagram.com/shpperapp/";
 export const youtubeLink = "https://www.youtube.com/@shpperNET";
 export const facebookLink = "https://www.facebook.com/shpperNET";
 export const snapchatLink = "https://www.snapchat.com/add/shppernet";
