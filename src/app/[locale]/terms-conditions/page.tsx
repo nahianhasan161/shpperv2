@@ -54,11 +54,11 @@ export default function FaqPage() {
           tableData={content.categoryTableContent.tableData}
           localActive={localActive}
         />
-        <ContactUsSection
+        {/*  <ContactUsSection
           title="Contact Us"
           description="Don’t hesitate to contact us if you have any questions."
-        />
-        <p className="text-[#777777] space-y-4 pb-10">
+        /> */}
+        <p className="text-[#777777] space-y-4 pb-10 mt-10">
           {localActive === "ar"
             ? `خر تحديث بتاريخ: 27 أكتوبر 2024`
             : `Last updated on: 27th October 2024`}
